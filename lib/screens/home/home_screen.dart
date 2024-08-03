@@ -39,13 +39,13 @@ class _HomeScreenState extends State<HomeScreen> {
     return BlocConsumer<AppCubit,AppStates>(
         listener: (context,state){},
         builder: (context,state){
-      return Scaffold(
-        floatingActionButton:FloatingActionButton(
+      return cubit.userModel !=null?Scaffold(
+        floatingActionButton:cubit.userModel!.isAdmin! ?FloatingActionButton(
           onPressed: (){navigateTo(context, const CreateNewExamScreen());},
           shape: const CircleBorder(),
           backgroundColor: Colors.white,
           child: const Icon(FontAwesomeIcons.plus,size: 20,),
-        ),
+        ):const SizedBox(),
         floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
         body: Padding(
           padding: const EdgeInsets.all(15.0),
@@ -78,6 +78,10 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ),
+      ):const Scaffold(
+        body: Column(children: [
+          Center(child: CircularProgressIndicator(),)
+        ],),
       );
     });
   }

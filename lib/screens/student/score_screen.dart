@@ -29,8 +29,8 @@ appBar: AppBar(title: const Text('Your Score')),
         padding: const EdgeInsets.all(15.0),
         child: Column(
           children: [
-            Text(widget.resultsModel.score! >= widget.resultsModel.examData!.passDegree!? 'Congratulations, you have passed the exam.' :'Unfortunately, You have failed to pass the exam.'),
-          Text('Your score: ${widget.resultsModel.score} || pass from: ${widget.resultsModel.examData!.passDegree!}'),
+            Text(widget.resultsModel.score! >= widget.resultsModel.examData!.passDegree!? 'Congratulations, you have passed the exam.' :'Unfortunately, You have failed to pass the exam.',style: (const TextStyle(fontSize: 18)),),
+          Text('Your score: ${widget.resultsModel.score} || pass from: ${widget.resultsModel.examData!.passDegree!}',style: (const TextStyle(fontSize: 18))),
           const  Spacer(),
 Center(child: ElevatedButton(onPressed: (){navigateTo(context, ReviewResultsScreen(resultsModel: widget.resultsModel));}, child: const Text('Results',style: TextStyle(fontSize: 20),))),
 Center(child: ElevatedButton(onPressed: (){cubit.getExams();cubit.getUserData(isAdmin: false);navigateToAndFinish(context,const StudentMainScreen());}, child: const Text('Home',style: TextStyle(fontSize: 20),))),
