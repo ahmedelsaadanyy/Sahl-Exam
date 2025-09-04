@@ -36,5 +36,4 @@ To install and run the app locally, follow these steps:
 
 Contributions are welcome! If you encounter any bugs or issues, please file an issue on [GitHub](https://github.com/your-username/sahl_exam_app). If you'd like to contribute code, feel free to open a pull request.
 
-## License
 
